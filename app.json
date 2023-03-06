@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "laundry-app",
-    "slug": "laundry-app",
+    "name": "PRISMS Laundry Manager",
+    "slug": "prisms-laundry-manager",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -18,11 +18,16 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
-        "backgroundColor": "#ff0000"
+        "backgroundColor": "#ffffff"
       }
     },
     "web": {
       "favicon": "./assets/imagesfavicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "4fed8bbc-2bf1-4322-bc54-f0f40c465718"
+      }
     }
   }
 }

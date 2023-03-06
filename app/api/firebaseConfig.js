@@ -14,14 +14,5 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-console.log("firease initialized");
 // Initialize Realtime Database and get a reference to the service
 export const db = getDatabase(app);
-
-// if (!firebase.apps.length) {
-//   console.log("fiffd");
-//   app = initializeApp(firebaseConfig);
-//   console.log("app intialized");
-// } else {
-//   firebase.app();
-// }

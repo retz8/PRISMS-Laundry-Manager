@@ -12,7 +12,6 @@ export default function Main() {
   const [machines, setMachines] = useState([]);
 
   const fetchMachines = async () => {
-    console.log("fetching...");
     const machinesRef = ref(db, "machines");
     onValue(machinesRef, (snapshot) => {
       let allMachines = [];
@@ -29,6 +28,10 @@ export default function Main() {
 
   return (
     <View style={styles.container}>
+      <SchoolLogoItem />
+      <InstructionItem />
+      <ReportButton />
+
       {machines.map((machine, index) => {
         return (
           <MachineItem
@@ -39,16 +42,16 @@ export default function Main() {
           />
         );
       })}
-      <SchoolLogoItem />
-      <InstructionItem />
-      <ReportButton />
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
     paddingTop: Constants.statusBarHeight,
-    position: "relative",
+    backgroundColor: "#ffffff",
+    width: "100%",
+    height: "90%",
   },
 });

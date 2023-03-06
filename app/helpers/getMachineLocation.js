@@ -1,52 +1,44 @@
-import { getMachineSize } from "./getMachineSize";
-import { Dimensions } from "react-native";
-
-const windowHeight = Dimensions.get("window").height;
+import { gheight, gwidth } from "./globalStyles";
 
 export function getMachineLocation(num) {
-  const { machineWidth, machineHeight } = getMachineSize();
-  const middleGap = 2 * machineWidth + machineWidth / 4;
-  const topGap = 10;
-  const bottomGap = machineWidth / 2;
+  const middleGap = 15;
   if (num === 0) {
-    return { machineTop: 0, machineRight: "75%" };
+    return { machineTop: 0 * gheight, machineRight: 323 * gwidth };
   } else if (num === 1) {
-    return { machineTop: 0, machineRight: "50%" };
+    return { machineTop: 0 * gheight, machineRight: 213 * gwidth };
   } else if (num === 2) {
-    return { machineTop: 0, machineRight: "2%" };
+    return { machineTop: 0 * gheight, machineRight: 10 * gwidth };
   } else if (num === 3) {
-    return { machineTop: machineWidth, machineRight: "2%" };
+    return { machineTop: 110 * gheight - 5, machineRight: 10 * gwidth };
   } else if (num === 4) {
     return {
-      machineTop: middleGap,
-      machineRight: "2%",
+      machineTop: (110 * 2 + middleGap) * gheight,
+      machineRight: 10 * gwidth,
     };
   } else if (num === 5) {
     return {
-      machineTop: middleGap + machineWidth,
-      machineRight: "2%",
+      machineTop: (110 * 3 + middleGap - 5) * gheight,
+      machineRight: 10 * gwidth,
     };
   } else if (num === 6) {
     return {
-      machineTop: middleGap + 2 * machineWidth,
-      machineRight: "2%",
+      machineTop: (110 * 4 + middleGap - 10) * gheight,
+      machineRight: 10 * gwidth,
     };
   } else if (num === 7) {
     return {
-      machineTop: windowHeight - 4 * machineWidth + bottomGap,
-      machineRight: (3 * machineHeight) / 2,
+      machineTop: (392 + 10) * gheight,
+      machineRight: 220 * gwidth,
     };
   } else if (num === 8) {
     return {
-      machineTop: windowHeight - 3 * machineWidth + bottomGap,
-      machineRight: (3 * machineHeight) / 2,
-    };
-  } else if (num === 9) {
-    return {
-      machineTop: windowHeight - 2 * machineWidth + bottomGap,
-      machineRight: (3 * machineHeight) / 2,
+      machineTop: (502 + 5) * gheight,
+      machineRight: 220 * gwidth,
     };
   } else {
-    return { machineTop: 500, machineRight: "10%" };
+    return {
+      machineTop: 612 * gheight,
+      machineRight: 220 * gwidth,
+    };
   }
 }
