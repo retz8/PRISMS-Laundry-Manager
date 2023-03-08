@@ -11,9 +11,12 @@
       "resizeMode": "cover",
       "backgroundColor": "#2c0f09"
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.retz8.prismslaundrymanager"
     },
     "android": {
       "adaptiveIcon": {
