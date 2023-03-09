@@ -1,24 +1,28 @@
-import { Image, StyleSheet } from "react-native";
+import { Dimensions, Image, StyleSheet, View } from "react-native";
 import React from "react";
-import { gheight, gwidth } from "../helpers/globalStyles";
+import { machineHeight, machineWidth } from "../helpers/getMachineSize";
 
-export default function InstructionItem() {
+const windowHeight = Dimensions.get("window").height;
+
+export default function InstructionItem({ machines }) {
   return (
-    <Image
-      source={require("../../assets/images/instruction.png")}
-      style={styles.instructionImage}
-    />
+    <View style={styles.container}>
+      <Image
+        source={require("../../assets/images/instruction.png")}
+        style={styles.instruction}
+      />
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
-  instructionImage: {
-    width: gwidth * 300,
-    height: gheight * 240,
-    resizeMode: "contain",
+  container: {
+    justifyContent: "center",
+    height: windowHeight - 1 * machineHeight - 3 * machineWidth - 130,
+  },
+  instruction: {
+    width: windowHeight - 1 * machineHeight - 3 * machineWidth - 130,
     transform: [{ rotate: "90deg" }],
-    position: "absolute",
-    top: gheight * 155,
-    right: gwidth * 140,
+    resizeMode: "contain",
   },
 });

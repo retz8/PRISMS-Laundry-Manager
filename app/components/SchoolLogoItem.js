@@ -1,25 +1,37 @@
-import { Image, StyleSheet } from "react-native";
+import { Dimensions, Image, StyleSheet, View } from "react-native";
 import React from "react";
-import { gheight, gwidth } from "../helpers/globalStyles";
+import { machineWidth } from "../helpers/getMachineSize";
+
+const windowHeight = Dimensions.get("window").height;
 
 export default function SchoolLogoItem() {
   return (
-    <Image
-      source={require("../../assets/images/PRISMS-logo.png")}
-      style={styles.schoolLogoImage}
-    />
+    <View style={styles.container}>
+      <View style={styles.logoContainer}>
+        <Image
+          source={require("../../assets/images/PRISMS-logo.png")}
+          style={styles.logo}
+        />
+      </View>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
-  schoolLogoImage: {
-    width: 189 * gwidth,
-    height: 63 * gheight,
+  container: {
+    justifyContent: "center",
+    flexDirection: "column",
+    height: windowHeight - 5 * machineWidth - (1 / 2) * machineWidth - 130,
+  },
+  logoContainer: {
+    justifyContent: "center",
+    height: windowHeight - 5 * machineWidth - (1 / 2) * machineWidth - 130,
+    alignItems: "flex-end",
+    paddingTop: 1 * machineWidth,
+  },
+  logo: {
     resizeMode: "contain",
+    width: windowHeight - 5 * machineWidth - (1 / 2) * machineWidth - 130,
     transform: [{ rotate: "90deg" }],
-    marginBottom: 10,
-    position: "absolute",
-    top: 622 * gheight,
-    right: -20 * gwidth,
   },
 });
