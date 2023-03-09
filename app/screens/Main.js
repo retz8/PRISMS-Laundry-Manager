@@ -52,7 +52,6 @@ export default function Main() {
 const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
-    marginTop: Constants.statusBarHeight,
     backgroundColor: "#ffffff",
     alignContent: "center",
     width: "100%",
