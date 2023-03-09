@@ -102,17 +102,18 @@ export default function NewMain() {
         <View
           style={{
             flex: 2.2,
-            alignItems: "center",
+            alignItems: "flex-start",
             justifyContent: "center",
             height: "100%",
           }}
         >
           <Image
-            source={require("../../assets/images/instruction.png")}
+            source={require("../../assets/images/instruction2.png")}
             style={{
               width: "100%",
               transform: [{ rotate: "90deg" }],
               resizeMode: "contain",
+              //left: "0%",
             }}
           />
         </View>
