@@ -1,12 +1,7 @@
-import { gheight, gwidth } from "./globalStyles";
 import { Dimensions } from "react-native";
 
-const windowWidth = Dimensions.get("window").width;
-const windowHeight = Dimensions.get("window").height;
+export const machineHeight = // 높이 변환 작업
+  (Dimensions.get("screen").height / 7).toFixed(2);
 
-export function getMachineSize() {
-  const machineWidth = windowWidth / 4;
-  const machineHeight = (machineWidth / 585) * 721;
-  console.log(`machineWidth: ${machineWidth}`);
-  return { machineWidth, machineHeight };
-}
+export const machineWidth = // 가로 변환 작업
+  (((Dimensions.get("screen").height / 7) * 585) / 721).toFixed(2);

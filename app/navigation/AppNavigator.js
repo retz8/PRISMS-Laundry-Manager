@@ -1,7 +1,8 @@
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
-import Main from "../screens/Main";
+//import Main from "../screens/Main";
 import NewMain from "../screens/NewMain";
+//import NewNewMain from "../screens/NewNewMain";
 
 const AppNavigator = () => {
   const Stack = createStackNavigator();

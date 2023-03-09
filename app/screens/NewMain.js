@@ -10,17 +10,15 @@ import SecondMachineItem from "../components/SecondMachineItem";
 import { getMachineImage } from "../helpers/getMachineImage";
 import { getMachineRotation } from "../helpers/getMachineRotation";
 import ReportButton from "../components/ReportButton";
-import {
-  machineWidth,
-  machineHeight,
-  getMachineSize,
-} from "../helpers/getMachineSize";
+import { machineWidth, machineHeight } from "../helpers/getMachineSize";
 
 const windowWidth = Dimensions.get("window").width;
 const windowHeight = Dimensions.get("window").height;
+const windowRatio = windowWidth / windowHeight;
 
 export default function NewMain() {
   const [machines, setMachines] = useState([]);
+  console.log(`machine: ${machineHeight} by ${machineWidth}`);
   console.log(`${windowHeight} by ${windowWidth}`);
 
   const fetchMachines = async () => {
@@ -36,7 +34,6 @@ export default function NewMain() {
   };
 
   useEffect(() => {
-    getMachineSize();
     fetchMachines();
   }, []);
 
@@ -51,13 +48,11 @@ export default function NewMain() {
         {/* <FirstMachineItem /> */}
         <View
           style={{
-            flex: 1,
+            //flex: 1,
             flexDirection: "row",
-            height: "100%",
-            width: "100%",
+            //height: "100%",
+            width: 2 * machineWidth,
             justifyContent: "space-between",
-            paddingLeft: "5%",
-            paddingRight: "5%",
           }}
         >
           {machines.map((machine, index) => {
@@ -65,13 +60,19 @@ export default function NewMain() {
               return (
                 <View
                   key={index}
-                  style={{ alignItems: "center", width: "50%" }}
+                  style={{
+                    justifyContent: "center",
+                    alignItems: "center",
+                    width: "50%",
+                    //paddingRight: "5%",
+                  }}
                 >
                   <Image
                     source={getMachineImage(machine.type, machine.status)}
                     style={{
-                      height: 111,
-                      resizeMode: "contain",
+                      height: 1 * machineHeight,
+                      width: 1 * machineWidth,
+                      //resizeMode: "contain",
                       transform: [getMachineRotation(index)],
                     }}
                   />
@@ -81,13 +82,18 @@ export default function NewMain() {
               return (
                 <View
                   key={index}
-                  style={{ alignItems: "center", width: "50%" }}
+                  style={{
+                    justifyContent: "center",
+                    alignItems: "center",
+                    width: "50%",
+                  }}
                 >
                   <Image
                     source={getMachineImage(machine.type, machine.status)}
                     style={{
-                      height: 111,
-                      resizeMode: "contain",
+                      height: 1 * machineHeight,
+                      width: 1 * machineWidth,
+                      //resizeMode: "contain",
                       transform: [getMachineRotation(index)],
                     }}
                   />
@@ -101,16 +107,19 @@ export default function NewMain() {
         {/* <NewSchoolLogoItem /> */}
         <View
           style={{
-            flex: 2.2,
-            alignItems: "flex-start",
+            //flex: 2.2,
+            //alignItems: "flex-start",
             justifyContent: "center",
-            height: "100%",
+            height: windowHeight - 1 * machineHeight - 3 * machineWidth - 120,
+
+            // paddingTop: 1 * machineHeight,
+            // paddingBottom: 1 * machineWidth,
           }}
         >
           <Image
             source={require("../../assets/images/instruction2.png")}
             style={{
-              width: "100%",
+              width: windowHeight - 1 * machineHeight - 3 * machineWidth - 120,
               transform: [{ rotate: "90deg" }],
               resizeMode: "contain",
               //left: "0%",
@@ -120,10 +129,9 @@ export default function NewMain() {
         {/* <SecondMachineItem /> */}
         <View
           style={{
-            flex: 2.7,
+            // flex: 2.7,
             flexDirection: "row",
-            height: "100%",
-            width: "100%",
+            height: 3 * machineWidth,
           }}
         >
           <View
@@ -140,8 +148,7 @@ export default function NewMain() {
             style={{
               flex: 6.5,
               flexDirection: "column",
-              justifyContent: "space-between",
-              height: "100%",
+              height: 3 * machineWidth,
               //paddingTop: "10%",
               //paddingBottom: "10%",
             }}
@@ -160,7 +167,7 @@ export default function NewMain() {
                     <Image
                       source={getMachineImage(machine.type, machine.status)}
                       style={{
-                        width: 90,
+                        width: 1 * machineWidth,
                         resizeMode: "contain",
                         transform: [getMachineRotation(index)],
                       }}
@@ -180,7 +187,7 @@ export default function NewMain() {
                     <Image
                       source={getMachineImage(machine.type, machine.status)}
                       style={{
-                        width: 90,
+                        width: 1 * machineWidth,
                         resizeMode: "contain",
                         transform: [getMachineRotation(index)],
                       }}
@@ -200,7 +207,7 @@ export default function NewMain() {
                     <Image
                       source={getMachineImage(machine.type, machine.status)}
                       style={{
-                        width: 90,
+                        width: 1 * machineWidth,
                         transform: [getMachineRotation(index)],
                         resizeMode: "contain",
                       }}
@@ -212,14 +219,15 @@ export default function NewMain() {
           </View>
         </View>
       </View>
-      <View style={{ flex: 1, flexDirection: "column" }}>
+      <View style={{ flex: 1, flexDirection: "column", paddingRight: "5%" }}>
         <View
           style={{
-            flex: 2,
+            //flex: 2,
             flexDirection: "column",
-            justifyContent: "space-between",
-            height: "100%",
-            paddingRight: "10%",
+            justifyContent: "center",
+            alignItems: "flex-end",
+
+            height: 2 * machineWidth,
           }}
         >
           {machines.map((machine, index) => {
@@ -229,14 +237,14 @@ export default function NewMain() {
                   key={index}
                   style={{
                     justifyContent: "center",
-                    height: "50%",
-                    alignItems: "flex-end",
+                    height: 1 * machineWidth,
+                    alignItems: "center",
                   }}
                 >
                   <Image
                     source={getMachineImage(machine.type, machine.status)}
                     style={{
-                      width: 90,
+                      width: 1 * machineWidth,
                       transform: [getMachineRotation(index)],
                       resizeMode: "contain",
                     }}
@@ -249,14 +257,14 @@ export default function NewMain() {
                   key={index}
                   style={{
                     justifyContent: "center",
-                    height: "50%",
+                    height: 1 * machineWidth,
                     alignItems: "flex-end",
                   }}
                 >
                   <Image
                     source={getMachineImage(machine.type, machine.status)}
                     style={{
-                      width: 90,
+                      width: 1 * machineWidth,
                       transform: [getMachineRotation(index)],
                       resizeMode: "contain",
                     }}
@@ -268,12 +276,11 @@ export default function NewMain() {
         </View>
         <View
           style={{
-            flex: 3.3,
+            //flex: 3.3,
             flexDirection: "column",
             justifyContent: "space-between",
-            paddingRight: "10%",
-            height: "100%",
-            paddingTop: "10%",
+            height: 3 * machineWidth,
+            paddingTop: (1 / 2) * machineWidth,
           }}
         >
           {machines.map((machine, index) => {
@@ -283,14 +290,14 @@ export default function NewMain() {
                   key={index}
                   style={{
                     justifyContent: "center",
-                    height: "33%",
+                    height: 1 * machineWidth,
                     alignItems: "flex-end",
                   }}
                 >
                   <Image
                     source={getMachineImage(machine.type, machine.status)}
                     style={{
-                      width: 90,
+                      width: 1 * machineWidth,
                       transform: [getMachineRotation(index)],
                       resizeMode: "contain",
                     }}
@@ -303,14 +310,14 @@ export default function NewMain() {
                   key={index}
                   style={{
                     justifyContent: "center",
-                    height: "33%",
+                    height: 1 * machineWidth,
                     alignItems: "flex-end",
                   }}
                 >
                   <Image
                     source={getMachineImage(machine.type, machine.status)}
                     style={{
-                      width: 90,
+                      width: 1 * machineWidth,
                       transform: [getMachineRotation(index)],
                       resizeMode: "contain",
                     }}
@@ -323,14 +330,14 @@ export default function NewMain() {
                   key={index}
                   style={{
                     justifyContent: "center",
-                    height: "33%",
+                    height: 1 * machineWidth,
                     alignItems: "flex-end",
                   }}
                 >
                   <Image
                     source={getMachineImage(machine.type, machine.status)}
                     style={{
-                      width: 90,
+                      width: 1 * machineWidth,
                       transform: [getMachineRotation(index)],
                       resizeMode: "contain",
                     }}
@@ -342,29 +349,34 @@ export default function NewMain() {
         </View>
         <View
           style={{
-            flex: 2,
-            position: "relative",
-            justifyContent: "space-between",
+            justifyContent: "center",
+
             flexDirection: "column",
-            height: "100%",
-            width: "100%",
+            height:
+              windowHeight - 5 * machineWidth - (1 / 2) * machineWidth - 120,
           }}
         >
           <View
             style={{
               justifyContent: "center",
-              height: "100%",
+              height:
+                windowHeight - 5 * machineWidth - (1 / 2) * machineWidth - 120,
               alignItems: "flex-end",
+              paddingTop: 1 * machineWidth,
             }}
           >
             <Image
               source={require("../../assets/images/PRISMS-logo.png")}
               style={{
                 resizeMode: "contain",
-                width: "80%",
+                width:
+                  windowHeight -
+                  5 * machineWidth -
+                  (1 / 2) * machineWidth -
+                  120,
                 transform: [{ rotate: "90deg" }],
-                position: "absolute",
-                left: "20%",
+                // position: "absolute",
+                // left: "20%",
               }}
             />
           </View>
