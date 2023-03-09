@@ -56,11 +56,12 @@ const styles = StyleSheet.create({
     backgroundColor: "#ffffff",
     alignContent: "center",
     width: "100%",
-    height: "90%",
+    height: "100%",
   },
   leftContainer: {
     flex: 1,
     flexDirection: "column",
+    paddingLeft: "2%",
   },
-  rightContainer: { flex: 1, flexDirection: "column", paddingRight: "5%" },
+  rightContainer: { flex: 1, flexDirection: "column", paddingRight: "3%" },
 });

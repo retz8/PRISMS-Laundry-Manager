@@ -25,17 +25,18 @@ export default function FirstMachineItem({ machines }) {
 const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
-    width: 2 * machineWidth,
+    width: 2 * machineWidth + 5,
     justifyContent: "space-between",
   },
   machineContainer: {
     justifyContent: "center",
     alignItems: "center",
-    width: "50%",
+    width: 1 * machineWidth,
   },
   machine: {
     height: 1 * machineHeight,
-    width: 1 * machineWidth,
     transform: [{ rotate: "0deg" }],
+
+    resizeMode: "contain",
   },
 });

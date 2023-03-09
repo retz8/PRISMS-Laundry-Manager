@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: "column",
     justifyContent: "space-between",
-    height: 3 * machineWidth,
+    height: 3 * machineWidth + (1 / 2) * machineWidth,
     paddingTop: (1 / 2) * machineWidth,
   },
   machineContainer: {

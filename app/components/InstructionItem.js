@@ -4,7 +4,7 @@ import { machineHeight, machineWidth } from "../helpers/getMachineSize";
 
 const windowHeight = Dimensions.get("window").height;
 
-export default function InstructionItem({ machines }) {
+export default function InstructionItem() {
   return (
     <View style={styles.container}>
       <Image
@@ -18,10 +18,11 @@ export default function InstructionItem({ machines }) {
 const styles = StyleSheet.create({
   container: {
     justifyContent: "center",
-    height: windowHeight - 1 * machineHeight - 3 * machineWidth - 130,
+    alignItems: "center",
+    height: windowHeight - 1 * machineHeight - 3 * machineWidth - 50,
   },
   instruction: {
-    width: windowHeight - 1 * machineHeight - 3 * machineWidth - 130,
+    width: windowHeight - 1 * machineHeight - 3 * machineWidth - 50,
     transform: [{ rotate: "90deg" }],
     resizeMode: "contain",
   },

@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
   },
   pressableText: {
-    fontSize: 22,
+    fontSize: 22 * ((1 * machineWidth) / 100),
     color: "#ffffff",
     fontWeight: "bold",
   },
