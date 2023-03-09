@@ -110,7 +110,7 @@ export default function NewMain() {
             //flex: 2.2,
             //alignItems: "flex-start",
             justifyContent: "center",
-            height: windowHeight - 1 * machineHeight - 3 * machineWidth - 120,
+            height: windowHeight - 1 * machineHeight - 3 * machineWidth - 130,
 
             // paddingTop: 1 * machineHeight,
             // paddingBottom: 1 * machineWidth,
@@ -119,7 +119,7 @@ export default function NewMain() {
           <Image
             source={require("../../assets/images/instruction2.png")}
             style={{
-              width: windowHeight - 1 * machineHeight - 3 * machineWidth - 120,
+              width: windowHeight - 1 * machineHeight - 3 * machineWidth - 130,
               transform: [{ rotate: "90deg" }],
               resizeMode: "contain",
               //left: "0%",
@@ -353,14 +353,14 @@ export default function NewMain() {
 
             flexDirection: "column",
             height:
-              windowHeight - 5 * machineWidth - (1 / 2) * machineWidth - 120,
+              windowHeight - 5 * machineWidth - (1 / 2) * machineWidth - 130,
           }}
         >
           <View
             style={{
               justifyContent: "center",
               height:
-                windowHeight - 5 * machineWidth - (1 / 2) * machineWidth - 120,
+                windowHeight - 5 * machineWidth - (1 / 2) * machineWidth - 130,
               alignItems: "flex-end",
               paddingTop: 1 * machineWidth,
             }}
@@ -373,7 +373,7 @@ export default function NewMain() {
                   windowHeight -
                   5 * machineWidth -
                   (1 / 2) * machineWidth -
-                  120,
+                  130,
                 transform: [{ rotate: "90deg" }],
                 // position: "absolute",
                 // left: "20%",
