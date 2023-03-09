@@ -57,8 +57,9 @@ export default function Main() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: Constants.statusBarHeight,
+    marginTop: Constants.statusBarHeight,
     backgroundColor: "#ffffff",
+    alignContent: "center",
     width: "100%",
     height: "90%",
   },

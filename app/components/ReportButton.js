@@ -18,10 +18,8 @@ const styles = StyleSheet.create({
   pressable: {
     position: "absolute",
     backgroundColor: "#bf0000",
-    height: 40 * gheight,
-    width: 200 * gwidth,
-    top: 560 * gheight,
-    right: 285 * gwidth,
+    height: 40,
+    width: 200,
     transform: [{ rotate: "90deg" }],
     alignItems: "center",
     justifyContent: "center",

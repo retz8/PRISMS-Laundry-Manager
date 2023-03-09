@@ -1,6 +1,7 @@
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 import Main from "../screens/Main";
+import NewMain from "../screens/NewMain";
 
 const AppNavigator = () => {
   const Stack = createStackNavigator();
@@ -9,7 +10,7 @@ const AppNavigator = () => {
       <Stack.Screen
         options={{ headerShown: false }}
         name="Main"
-        component={Main}
+        component={NewMain}
       />
     </Stack.Navigator>
   );

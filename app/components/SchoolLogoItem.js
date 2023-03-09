@@ -11,6 +11,12 @@ const middleGap = 5;
 const rat = (machineWidth / windowHeight) * 100;
 
 export default function SchoolLogoItem() {
+  console.log(
+    `${windowHeight < 816 ? 816 / windowHeight : 1} by ${
+      windowWidth < 432 ? windowWidth / 432 : 1
+    }`
+  );
+  console.log(`gheight : ${gheight} gwidth : ${gwidth}`);
   return (
     <Image
       source={require("../../assets/images/PRISMS-logo.png")}
