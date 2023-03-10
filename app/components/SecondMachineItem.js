@@ -4,12 +4,10 @@ import { getMachineImage } from "../helpers/getMachineImage";
 import { machineWidth } from "../helpers/getMachineSize";
 import ReportButton from "./ReportButton";
 
-export default function FirstMachineItem({ machines }) {
+export default function SecondMachineItem({ machines }) {
   return (
     <View style={styles.container}>
-      <View style={styles.buttonContainer}>
-        <ReportButton />
-      </View>
+      <View style={styles.buttonContainer}>{/* <ReportButton /> */}</View>
 
       <View style={styles.itemContainer}>
         {machines.map((machine, index) => {
@@ -31,22 +29,28 @@ export default function FirstMachineItem({ machines }) {
 
 const styles = StyleSheet.create({
   container: {
-    flexDirection: "row",
+    //flexDirection: "row",
+    flexWrap: "wrap",
     height: 3 * machineWidth,
+    justifyContent: "center",
   },
   buttonContainer: {
-    flex: 3,
-    justifyContent: "center",
+    //flex: 1,
+    flexDirection: "column",
+    width: 1 * machineWidth,
+    height: 3 * machineWidth,
     alignItems: "center",
+    justifyContent: "center",
   },
   itemContainer: {
-    flex: 6.5,
+    //flex: 1,
+    // width: 1 * machineWidth,
     flexDirection: "column",
     height: 3 * machineWidth,
   },
   machineContainer: {
     justifyContent: "center",
-    height: "33%",
+    height: 1 * machineWidth,
     alignItems: "center",
   },
   machine: {

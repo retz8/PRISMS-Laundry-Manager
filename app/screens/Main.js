@@ -1,18 +1,14 @@
-import { StyleSheet, View, Image, Text } from "react-native";
+import { StyleSheet, View } from "react-native";
 import React, { useEffect, useState } from "react";
 import { db } from "../api/firebaseConfig";
-import Constants from "expo-constants";
 import { ref, onValue } from "firebase/database";
-import { Dimensions } from "react-native";
 import FirstMachineItem from "../components/FirstMachineItem";
 import SecondMachineItem from "../components/SecondMachineItem";
-import { machineWidth, machineHeight } from "../helpers/getMachineSize";
 import FirstRightMachineItem from "../components/FirstRightMachineItem";
 import SecondRightMachineItem from "../components/SecondRightMachineItem";
 import SchoolLogoItem from "../components/SchoolLogoItem";
 import InstructionItem from "../components/InstructionItem";
-
-const windowHeight = Dimensions.get("window").height;
+import ReportButton from "../components/ReportButton";
 
 export default function Main() {
   const [machines, setMachines] = useState([]);
@@ -38,6 +34,7 @@ export default function Main() {
         <FirstMachineItem machines={machines} />
         <InstructionItem />
         <SecondMachineItem machines={machines} />
+        <ReportButton />
       </View>
 
       <View style={styles.rightContainer}>
@@ -56,6 +53,7 @@ const styles = StyleSheet.create({
     alignContent: "center",
     width: "100%",
     height: "100%",
+    position: "relative",
   },
   leftContainer: {
     flex: 1,

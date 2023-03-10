@@ -1,25 +1,36 @@
-import { Pressable, StyleSheet, Text } from "react-native";
+import { Dimensions, StyleSheet, Text, TouchableOpacity } from "react-native";
 import { openURL } from "../helpers/openURL";
-import { machineWidth } from "../helpers/getMachineSize";
+import { machineHeight, machineWidth } from "../helpers/getMachineSize";
+
+const windowHeight = Dimensions.get("window").height;
 
 export default function ReportButton() {
   return (
-    <Pressable onPress={() => openURL()} style={styles.pressable}>
+    <TouchableOpacity
+      onPress={() => {
+        openURL();
+      }}
+      style={styles.pressable}
+    >
       <Text style={styles.pressableText}>Report Issue</Text>
-    </Pressable>
+    </TouchableOpacity>
   );
 }
 
 const styles = StyleSheet.create({
   pressable: {
-    position: "absolute",
     backgroundColor: "#bf0000",
-    height: (1 / 4) * 2 * machineWidth,
+    aspectRatio: 4,
     width: 2 * machineWidth,
     transform: [{ rotate: "90deg" }],
     alignItems: "center",
     justifyContent: "center",
     borderRadius: 10,
+    position: "absolute",
+    top:
+      2 * machineHeight +
+      (windowHeight - 1 * machineHeight - 3 * machineWidth - 50),
+    left: -0.5 * machineWidth,
   },
   pressableText: {
     fontSize: 22 * ((1 * machineWidth) / 100),
