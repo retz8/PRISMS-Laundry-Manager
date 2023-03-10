@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
     height: windowHeight - 1 * machineHeight - 3 * machineWidth - 50,
   },
   instruction: {
-    width: windowHeight - 1 * machineHeight - 3 * machineWidth - 50,
+    width: windowHeight - 1 * machineHeight - 4 * machineWidth,
     transform: [{ rotate: "90deg" }],
     resizeMode: "contain",
   },

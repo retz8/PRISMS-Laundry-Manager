@@ -2,7 +2,6 @@ import { Image, StyleSheet, View } from "react-native";
 import React from "react";
 import { getMachineImage } from "../helpers/getMachineImage";
 import { machineWidth } from "../helpers/getMachineSize";
-import ReportButton from "./ReportButton";
 
 export default function SecondMachineItem({ machines }) {
   return (
@@ -43,8 +42,6 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   itemContainer: {
-    //flex: 1,
-    // width: 1 * machineWidth,
     flexDirection: "column",
     height: 3 * machineWidth,
   },

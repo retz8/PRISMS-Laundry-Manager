@@ -19,7 +19,7 @@ export default function ReportButton() {
 
 const styles = StyleSheet.create({
   pressable: {
-    backgroundColor: "#bf0000",
+    backgroundColor: "#cccccc",
     aspectRatio: 4,
     width: 2 * machineWidth,
     transform: [{ rotate: "90deg" }],

@@ -9,6 +9,7 @@ import SecondRightMachineItem from "../components/SecondRightMachineItem";
 import SchoolLogoItem from "../components/SchoolLogoItem";
 import InstructionItem from "../components/InstructionItem";
 import ReportButton from "../components/ReportButton";
+import Constants from "expo-constants";
 
 export default function Main() {
   const [machines, setMachines] = useState([]);
@@ -51,6 +52,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     backgroundColor: "#ffffff",
     alignContent: "center",
+    marginTop: Constants.statusBarHeight,
     width: "100%",
     height: "100%",
     position: "relative",
