@@ -1,18 +1,27 @@
 import { initializeApp } from "firebase/app";
 import { getDatabase } from "firebase/database";
+import {
+  FIREBASE_API_KEY,
+  FIREBASE_AUTH_DOMAIN,
+  FIREBASE_DATABASE_URL,
+  FIREBASE_PROJECT_ID,
+  FIREBASE_STORAGE_BUCKET,
+  FIREBASE_SENDER_ID,
+  FIREBASE_APP_ID,
+  FIREBASE_MEASUREMENT_ID,
+} from "@env";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDmiKeTMeQLU2fnDMx88WU5FsYSo5Y7XEY",
-  authDomain: "prisms-laundry-recorder.firebaseapp.com",
-  databaseURL: "https://prisms-laundry-recorder-default-rtdb.firebaseio.com",
-  projectId: "prisms-laundry-recorder",
-  storageBucket: "prisms-laundry-recorder.appspot.com",
-  messagingSenderId: "358277480702",
-  appId: "1:358277480702:web:c7ce263408387f3d1ea5af",
-  measurementId: "G-2NSBNZQTR4",
+  apiKey: FIREBASE_API_KEY,
+  authDomain: FIREBASE_AUTH_DOMAIN,
+  databaseURL: FIREBASE_DATABASE_URL,
+  projectId: FIREBASE_PROJECT_ID,
+  storageBucket: FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: FIREBASE_SENDER_ID,
+  appId: FIREBASE_APP_ID,
+  measurementId: FIREBASE_MEASUREMENT_ID,
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 // Initialize Realtime Database and get a reference to the service
 export const db = getDatabase(app);
